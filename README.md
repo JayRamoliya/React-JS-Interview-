@@ -85,6 +85,23 @@
   39                   [Web Vitals](#39-what-are-web-vitals)
 
   40                   [Tree Shaking](#40-what-is-tree-shaking)
+
+  41                   [Redux Toolkit](#41-what-is-redux-toolkit)
+
+  42                   [createSlice](#42-what-is-createslice)
+
+  43                   [configureStore](#43-what-is-configurestore)
+
+  44                   [RTK Query](#44-what-is-rtk-query)
+
+  45                   [createApi](#45-what-is-createapi)
+
+  46                   [Difference Redux vs
+                       RTK](#46-difference-between-redux-and-redux-toolkit)
+
+  47                   [RTK Query Advantages](#47-advantages-of-rtk-query)
+
+  48                   [RTK Query Example](#48-simple-rtk-query-example)
   -------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
@@ -335,3 +352,119 @@ Metrics to measure web performance.
 ## 40. What is Tree Shaking?
 
 Removing unused code from bundle.
+
+------------------------------------------------------------------------
+
+# 🔥 Redux Toolkit & RTK Query Interview Questions
+
+## 41. What is Redux Toolkit?
+
+Redux Toolkit (RTK) is the official and recommended way to use Redux. It
+reduces boilerplate code and makes Redux easy.
+
+✅ Less code\
+✅ Built-in good defaults\
+✅ Faster development
+
+------------------------------------------------------------------------
+
+## 42. What is createSlice?
+
+`createSlice` is used to create reducer and actions together.
+
+``` js
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { value: 0 },
+  reducers: {
+    increment: (state) => {
+      state.value += 1;
+    }
+  }
+});
+```
+
+✅ No switch-case needed
+
+------------------------------------------------------------------------
+
+## 43. What is configureStore?
+
+`configureStore` is used to create Redux store easily.
+
+``` js
+const store = configureStore({
+  reducer: {
+    counter: counterReducer
+  }
+});
+```
+
+✅ Auto adds Redux DevTools\
+✅ Auto adds middleware
+
+------------------------------------------------------------------------
+
+## 44. What is RTK Query?
+
+RTK Query is a powerful data fetching and caching tool built inside
+Redux Toolkit.
+
+✅ API calls\
+✅ Caching\
+✅ Auto loading & error handling\
+✅ Less code
+
+------------------------------------------------------------------------
+
+## 45. What is createApi?
+
+`createApi` is used to define API endpoints in RTK Query.
+
+``` js
+export const api = createApi({
+  baseQuery: fetchBaseQuery({ baseUrl: '/api' }),
+  endpoints: (builder) => ({
+    getUsers: builder.query({
+      query: () => '/users'
+    })
+  })
+});
+```
+
+✅ Automatically generates hooks
+
+------------------------------------------------------------------------
+
+## 46. Difference Between Redux and Redux Toolkit
+
+  Redux                Redux Toolkit
+  -------------------- --------------------
+  More boilerplate     Less boilerplate
+  Manual setup         Auto configuration
+  Slower development   Faster development
+
+------------------------------------------------------------------------
+
+## 47. Advantages of RTK Query
+
+✅ No manual API actions\
+✅ Auto cache handling\
+✅ Built-in loading and error states\
+✅ Less useEffect usage
+
+------------------------------------------------------------------------
+
+## 48. Simple RTK Query Example
+
+``` js
+const { data, error, isLoading } = useGetUsersQuery();
+```
+
+✅ No axios\
+✅ No useEffect\
+✅ Direct API call in component
+
+------------------------------------------------------------------------
+
+🎯 This section is VERY IMPORTANT for modern React interviews in 2025.
